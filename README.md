@@ -62,10 +62,7 @@ Kullanılan SQL yapıları:
 - SUM() OVER()
 - PARTITION BY
 
-### 7. 
-Bu sorgunun gereksinimi verilen çalışma listesinde yer almadığı için ayrıca uygulanmamıştır.
-
-### 8. Ortalama kargo ücretinin üzerinde kargo ödeyen siparişler
+### 7. Ortalama kargo ücretinin üzerinde kargo ödeyen siparişler
 Kullanılan SQL yapıları:
 - Subquery
 - JOIN
@@ -92,6 +89,44 @@ Bu çalışma ile ilişkisel veriler üzerinde ileri seviye SQL sorguları kulla
 - Window Function
 - PARTITION BY
 - IS NULL
+
+## Örnek Sonuçlar
+
+### Müşteri Toplam Harcamaları
+
+Sorgu sonucunda müşterilerin toplam harcamaları hesaplanmış ve büyükten küçüğe sıralanmıştır.
+
+| Müşteri | Toplam Harcama |
+|---|---:|
+| Can Aydın | 13.845 TL |
+| Ayşe Yılmaz | 11.650 TL |
+| Merve Ak | 9.880 TL |
+| Mehmet Demir | 9.435 TL |
+| Ali Şahin | 7.560 TL |
+
+### En Çok Satan 3 Ürün
+
+| Ürün Kodu | Toplam Satış |
+|---|---:|
+| P410 | 170 |
+| P630 | 64 |
+| P310 | 34 |
+
+### Aylık Ciro
+
+2024 yılı için aylık ciro hesaplanmıştır. En yüksek aylık ciro **Aralık ayında 17.665 TL** olarak gerçekleşmiştir.
+
+### Sipariş Vermeyen Müşteriler
+
+Mevcut veri kümesinde tüm müşterilerin en az bir siparişi bulunduğundan sorgu sonucunda **0 kayıt** döndürülmüştür.
+
+### Kümülatif Harcama
+
+Window Function kullanılarak müşterilerin sipariş tarihine göre **kümülatif harcamaları** hesaplanmıştır.
+
+### Kargo Analizi
+
+Ortalama kargo ücretinin üzerinde ödeme yapılan siparişler subquery ve JOIN kullanılarak belirlenmiştir.
 
 ## Geliştirici
 
